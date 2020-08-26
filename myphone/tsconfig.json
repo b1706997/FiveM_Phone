@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "sourceMap": true,
+      "module": "commonjs",
+      "target": "es5",
+      "jsx": "react",
+      "baseUrl": "./src",
+      "paths": {
+          "@components/*": ["./components/*"],
+          "@atoms/*": ["./components/atoms/*"],
+          "@molecules/*":["./components/molecules/*"],
+          "@organisms/*":["./components/organisms/*"],
+          "@templates/*":["./components/templates/*"],
+          "@styles/*":["./styles/*"],
+          "@app/*":["./app/*"]
+      }
+    },
+    "include": [
+      "src"
+    ],
+    "compileOnSave": false,
+    
+  }

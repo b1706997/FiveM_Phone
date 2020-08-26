@@ -1,0 +1,8 @@
+.Phone {
+    height: 500;
+    width: 300;
+    background-color: aqua;
+    bottom:0;
+    right:8%;
+    position:fixed;
+}
