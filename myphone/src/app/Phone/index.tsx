@@ -4,7 +4,8 @@ import Test from '@components/atoms/Test';
 import './index.css'
 
 type State = {
-    display:boolean
+    display:boolean,
+    content:string
 }
 
 class Phone extends React.Component<State> {
@@ -13,26 +14,31 @@ class Phone extends React.Component<State> {
     {
         super(props);
         this.state = {
-            display:false
+            display:false,
+            content:''
         }
         window.addEventListener('message',(event) => {
-            if(event.data.type=="ui") {
-                this.setState({display:event.data.status})
+            if(event.data.type=="close") {
+                this.setState({display:false})
             }
+            if(event.data.type=="open")
+                this.setState({display:true})
+            if(event.data.type=='navigate')
+                this.setState({content:event.data.content})
         });
     }
     render() {
         return(
             // this.state.display &&
-            <phonewrap data='ip6'> 
-                <PhoneScreen>
+            // <phonewrap data='ip6'> 
+            //     <PhoneScreen>
                     
-                </PhoneScreen>
-            </phonewrap>
-            <div className='PhoneWrap'>
-                <div className='PhoneScreen'>            
-                                <Test></Test>
-                </div>
+            //     </PhoneScreen>
+            // </phonewrap>
+            this.state.display &&
+            <div className='Phone'>
+                <Test></Test>
+                <h1>{this.state.content}</h1>
             </div>
             
         )

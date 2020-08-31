@@ -27,6 +27,15 @@ function put_phone_in()
     print(display)
 end
 
+-- AddEventHandler('onClientResourceStart', function (resourceName)
+--     if(GetCurrentResourceName() ~= resourceName) then
+--       return
+--     end
+--     SetPedConfigFlag(PlayerPedId(), 242, not true)
+--     SetPedConfigFlag(PlayerPedId(), 243, not true)
+--     SetPedConfigFlag(PlayerPedId(), 244, true)
+-- end)
+
 Citizen.CreateThread(function() 
     while true do
         Citizen.Wait(0)
@@ -60,5 +69,4 @@ end)
 
 --     end
 -- end)
-
 
