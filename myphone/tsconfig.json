@@ -12,7 +12,8 @@
           "@organisms/*":["./components/organisms/*"],
           "@templates/*":["./components/templates/*"],
           "@styles/*":["./styles/*"],
-          "@app/*":["./app/*"]
+          "@app/*":["./app/*"],
+          "@services/*":["./services/*"]
       }
     },
     "include": [

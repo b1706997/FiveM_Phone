@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { withTranslation } from 'react-i18next'
 
 class Test extends React.Component {
     constructor(props)
@@ -8,9 +9,9 @@ class Test extends React.Component {
     }
     render() {
         return(
-            <h1>Testing</h1>
+            <h1>{this.props('')}</h1>
         )
     }
 }
 
-export default Test
+export default withTranslation()(Test)

@@ -4,6 +4,8 @@ duiObj = nil
 duiHandle = nil
 tx = nil
 url = 'nui://phone/myphone/public/index.html'
+object = nil
+objHandle = nil
 -- url = 'www.google.com'
 -- Display
 width = 450
@@ -28,12 +30,13 @@ AddEventHandler('onClientResourceStart', function (resourceName)
     Phone(55,-27)
 end)
 
+
 RegisterNUICallback('path', function(data)
     print(data.text)
 end)
 
 RegisterCommand('path', function() 
-    send_dui({})
+    send_dui({type='getpath'})
 end)
 
 function send_dui(data)
@@ -41,11 +44,35 @@ function send_dui(data)
     -- print(data)
 end
 
+RegisterCommand('tele', function() 
+    -- SetPedCoordsKeepVehicle(GetPlayerPed(), -1493.0, -1150.0, 0.0)
+    -- exports.spawnmanager.spawnPlayer(1)
+    
+    exports.spawnmanager:spawnPlayer(1, function(spawn)
+        TriggerEvent('chat:addMessage', { args = { 'You have spawned! Congrats!' } })
+    end)
+end)
+
+RegisterCommand('heli', function()  
+    
+
+end)
+
 function open_phone()
+    SetPedConfigFlag(PlayerPedId(), 242, not true)
+    SetPedConfigFlag(PlayerPedId(), 243, not true)
+    SetPedConfigFlag(PlayerPedId(), 244, true)
     CreateMobilePhone(0)
     -- SendDuiMessage(duiObj,json.encode({
     --     type='open'
     -- }))
+    local x, y, z = table.unpack(GetEntityCoords(GetPlayerPed(-1), false))
+    model = GetHashKey('prop_player_phone_01')
+    RequestModel(model)
+    object = GetClosestObjectOfType(x, y, z, 0.05, model, 0, 0, 0)
+    RegisterNamedRendertarget('phone',0)
+    LinkNamedRendertarget(object)
+    handle = GetNamedRendertargetRenderId('phone')
     send_dui({type='open'})
     phone = true
     print(phone)
@@ -54,7 +81,6 @@ end
 function Floatify(Int)
     return Int + .0
   end
-  
 function Phone(X,Y,P,Yaw,R,Z,S)
     SetMobilePhonePosition(Floatify(X or 0),Floatify(Y or 5),Floatify(Z or -60))
     SetMobilePhoneRotation(Floatify(P or -90),Floatify(Yaw or 0),Floatify(R or 0)) -- 75<X<75
@@ -76,7 +102,7 @@ CreateThread(function()
     -- While the phone is turn on do these
     while true do Wait(0) 
         if(phone==true) then
-            print('phone')
+            -- print('phone')
         -- Phone condition
             -- DisableControlAction(1, 200, true)
             -- DisableControlAction(1, 199, true)
@@ -120,8 +146,8 @@ CreateThread(function()
             
 
             -- Render phone
-            local phoneRenderId = GetMobilePhoneRenderId()
-            SetTextRenderId(phoneRenderId)
+            -- local phoneRenderId = GetMobilePhoneRenderId()
+            SetTextRenderId(objHandle)
             DrawSprite('phone', 'playerPhone', 0.5, 0.5, 1.0, 1.0, 0, 255, 255, 255, 255)
         end    
     end

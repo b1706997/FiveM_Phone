@@ -2,15 +2,22 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import Test from '@components/atoms/Test';
 import './index.css'
+import {Provider} from 'react-redux';
+import store from '@services/redux/store.js';
+
 
 type State = {
     display:boolean,
-    content:string
+    content:string,
 }
 
-class Phone extends React.Component<State> {
+type Prop = {
+    lang:string
+}
+
+class Phone extends React.Component<Prop , State>{
     state : State
-    constructor(props)
+    constructor(props:Prop)
     {
         super(props);
         this.state = {
@@ -36,11 +43,12 @@ class Phone extends React.Component<State> {
             //     </PhoneScreen>
             // </phonewrap>
             this.state.display &&
-            <div className='Phone'>
-                <Test></Test>
-                <h1>{this.state.content}</h1>
-            </div>
-            
+            <Provider store={store}>
+                <div className='Phone'>
+                    <Test></Test>
+                    <h1>{this.state.content}</h1>
+                </div>
+            </Provider>
         )
     }
 }

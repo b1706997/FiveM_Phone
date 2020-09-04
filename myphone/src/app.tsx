@@ -3,6 +3,6 @@ import * as ReactDOM from 'react-dom';
 import Phone from '@app/Phone';
 
 ReactDOM.render(
-    <Phone display={false} content=''></Phone>,
+    <Phone lang='vn'></Phone>,
     document.getElementById('root')
 );
