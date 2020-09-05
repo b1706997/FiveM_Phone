@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import Test from '@components/atoms/Test';
 import './index.css'
 import {Provider} from 'react-redux';
-import store from '@services/redux/store.js';
+import store from '@redux/store.js';
 
 
 type State = {

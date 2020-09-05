@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
       "sourceMap": true,
+      "moduleResolution": "node",
       "module": "commonjs",
       "target": "es5",
       "jsx": "react",
@@ -13,8 +14,9 @@
           "@templates/*":["./components/templates/*"],
           "@styles/*":["./styles/*"],
           "@app/*":["./app/*"],
-          "@services/*":["./services/*"]
-      }
+          "@services/*":["./services/*"],
+          "@redux/*":["./services/redux/*"]
+      },
     },
     "include": [
       "src"
