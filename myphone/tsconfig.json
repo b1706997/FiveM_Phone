@@ -12,8 +12,8 @@
           "@molecules/*":["./components/molecules/*"],
           "@organisms/*":["./components/organisms/*"],
           "@templates/*":["./components/templates/*"],
+          "@apps/*":["./components/apps/*"],
           "@styles/*":["./styles/*"],
-          "@app/*":["./app/*"],
           "@services/*":["./services/*"],
           "@redux/*":["./services/redux/*"]
       },
