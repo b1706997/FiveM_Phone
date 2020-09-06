@@ -4,7 +4,6 @@ import { Translation } from 'react-i18next';
 // Props
 type Prop = {
     language:string,
-    onclick:object
 }
 class Test extends React.Component<Prop,{}> {
     constructor(props:Prop)
@@ -16,14 +15,14 @@ class Test extends React.Component<Prop,{}> {
             <div>
                 <Translation>
                     {
-                        t => <h1>{t('hello.label')}</h1>
+                        t => <h1>{t('Welcome to React')}</h1>
                     }
                 </Translation>
-            <button onClick={this.props.onclick}></button>
+            <button > hey u</button>
             </div>
         )
     }
 }
 
 
-
+export default Test

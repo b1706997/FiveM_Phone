@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import Test from '@components/atoms/Test';
 import './index.css'
-import {Provider} from 'react-redux';
+// import {Provider} from 'react-redux';
 import store from '@redux/store.js';
 
 
@@ -42,13 +42,13 @@ class Phone extends React.Component<Prop , State>{
                     
             //     </PhoneScreen>
             // </phonewrap>
-            this.state.display &&
-            <Provider store={store}>
+            // this.state.display &&
+            // <Provider store={store}>
                 <div className='Phone'>
-                    <Test></Test>
+                    <Test language={'vn'}></Test>
                     <h1>{this.state.content}</h1>
                 </div>
-            </Provider>
+            // </Provider>
         )
     }
 }
