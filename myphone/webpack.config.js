@@ -11,7 +11,7 @@ module.exports = {
         '@atoms': __dirname + '/src/components/atoms',
         '@molecules': __dirname+ '/src/components/molecules',
         '@organisms': __dirname+ '/src/components/organisms',
-        '@templates': __dirname+ './src/components/templates',
+        '@templates': __dirname+ '/src/components/templates',
         '@apps': __dirname+ '/src/components/apps',
         '@styles': __dirname+ '/src/styles',
         '@services': __dirname+ '/src/services',

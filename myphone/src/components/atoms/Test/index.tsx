@@ -15,7 +15,7 @@ class Test extends React.Component<Prop,{}> {
             <div>
                 <Translation>
                     {
-                        t => <h1>{t('Welcome to React')}</h1>
+                        t => <h1>{t('hello.label')}</h1>
                     }
                 </Translation>
             <button > hey u</button>
