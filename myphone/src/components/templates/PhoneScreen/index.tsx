@@ -1,12 +1,11 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-
+import './index.css'
 type State = {
     detail:boolean,
-    currentApp:object,
 }
 type Prop = {
-    App:Array<number> // 2D array
+    display:boolean
 }
 class PhoneScreen extends React.Component<Prop,State> {
     state:State
@@ -17,9 +16,15 @@ class PhoneScreen extends React.Component<Prop,State> {
             detail:false
         }
     }
+    shouldComponentUpdate(nextProp,nextState) {
+        if(this.props.display!=nextProp.display)
+            return true
+    }
     render() {
         return(
-            this.state.detail ? <h1>Detail</h1> : <h1>HomePage</h1>
+            <div className='container'>
+                sds
+            </div>
         )
     }
 }

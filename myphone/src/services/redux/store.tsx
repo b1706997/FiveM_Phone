@@ -1,14 +1,14 @@
 import {configureStore,combineReducers} from '@reduxjs/toolkit';
-import authenSlice from './features/user/authen/index.js';
+import settingSlice from './setting';
 
 const rootReducer = combineReducers({
-    authen:authenSlice
-})
+    setting:settingSlice
+} as any)
 export default configureStore ({
     reducer:rootReducer
 });
 // export default configureStore({
 //     reducer:{
-//         authen:authenSlice
+//         setting:settingSlice
 //     }
 // })
