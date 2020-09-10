@@ -2,10 +2,10 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { HashRouter as Router } from "react-router-dom"
 import {Provider} from 'react-redux'
-import store from '@redux/store.js'
+import store from '@redux/store.tsx'
 import './i18n'
-// import PhoneScreen from '@templates/PhoneScreen'
-import Test from '@atoms/Test'
+import PhoneScreen from '@templates/PhoneScreen'
+// import Test from '@atoms/Test'
 
 type State = {
     display:boolean
@@ -16,7 +16,7 @@ class App extends React.Component<{},State> {
     {
         super(prop)
         this.state  = {
-            display:false
+            display:true
         }
     }
     handleConstruct (event) {
@@ -49,16 +49,17 @@ class App extends React.Component<{},State> {
     render() {
         return(
             // this.state.display ? <PhoneScreen></PhoneScreen> : null
-            // <PhoneScreen></PhoneScreen>
-            <Test language={'vn'}></Test>
+            <PhoneScreen display={this.state.display}/>
+            // <Test language={'vn'}></Test>
         )
     }
 }
 ReactDOM.render(
-    <Router>
+    // <Router>
         <Provider store={store}>
             <App></App>
         </Provider>
-    </Router>,
+    // </Router>,
+    ,
     document.getElementById('root')
 );

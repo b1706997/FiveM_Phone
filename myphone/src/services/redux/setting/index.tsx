@@ -15,7 +15,7 @@ const initialState : setting = {
     font: 'small'
 }
 
-export const settingSlice = createSlice({
+ export const settingSlice = createSlice({
     name:'setting',
     initialState,
     reducers: {
@@ -33,5 +33,8 @@ export const settingSlice = createSlice({
             state.font = action.payload // Change the current font size of the phone
         }
     }
-
 })
+
+export const {phoneIDChange,languageChange,fontChange} = settingSlice.actions
+
+export default settingSlice.reducer
