@@ -2,3 +2,6 @@
     background-color:blue;
     height:100%
 }
+.container-disable {
+    display:none;
+}

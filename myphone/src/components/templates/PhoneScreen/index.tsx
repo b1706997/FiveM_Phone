@@ -1,6 +1,8 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import './index.css'
+
+import Header from './Header'
 type State = {
     detail:boolean,
 }
@@ -22,8 +24,9 @@ class PhoneScreen extends React.Component<Prop,State> {
     }
     render() {
         return(
-            <div className='container'>
-                sds
+            <div className={this.props.display ? 'container' : 'container-disable'}>
+                <Header />
+                {/* <Screen/> */}
             </div>
         )
     }
