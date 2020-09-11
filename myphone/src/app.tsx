@@ -25,7 +25,7 @@ class App extends React.Component<{},State> {
             // Lay phone ID tu` database
             const phoneID = 1
             // Set globalState.phoneID = phoneID
-            store.dispatch({type:'setting/phoneIDChange',payload:{phoneID}})
+            // store.dispatch({type:'setting/phoneIDChange',payload:{phoneID}})
         }
     }
     handleInput(event) {

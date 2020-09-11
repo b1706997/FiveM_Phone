@@ -13,34 +13,30 @@ class Header extends React.Component<Prop,State> {
     constructor(prop:Prop)
     {
         super(prop)
-        this.tick = this.tick.bind(this)
+        console.log(prop)
     }
+    interval;
     componentDidMount()
     {
-        // this.interval = setInterval(this.props.tick,1000)
-        // console.log(this.props.time)
+        this.interval = setInterval(this.props.tick,2000)
     }
     componentWillUnmount()
     {
-        // clearInterval(this.interval)
+        clearInterval(this.interval)
     }
-    tick() {
-        this.props.tick()
-    }
-
     render() {
         return(
             <div className='container'>
                 <p>{this.props.time}</p>
-                <button onClick={this.tick}></button>
+                <button > sad</button>
             </div>
         )
     }
 }
 
-const mapStateToProp = (state) => {
-    return {time:state.timeString}
-}
+const mapStateToProps = state => ({ time: state.construct.timeString })
+
+
 
 const mapDispatchToProp = (dispatch) => {
     return{
@@ -49,6 +45,6 @@ const mapDispatchToProp = (dispatch) => {
 }
 
 
-export default connect(mapStateToProp,mapDispatchToProp)(Header)
+export default connect(mapStateToProps,mapDispatchToProp)(Header)
 
 // export default Header
