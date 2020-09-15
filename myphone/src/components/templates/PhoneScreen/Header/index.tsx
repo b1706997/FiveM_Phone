@@ -7,7 +7,7 @@ type State = {
 }
 type Prop = {
     time:string,
-    tick:any
+    tick:any,
 }
 class Header extends React.Component<Prop,State> {
     constructor(prop:Prop)
@@ -26,9 +26,10 @@ class Header extends React.Component<Prop,State> {
     }
     render() {
         return(
-            <div className='container'>
-                <p>{this.props.time}</p>
-                <button > sad</button>
+            <div className='container-fluid root mw-100 d-flex justify-content-between'>
+                <i className='fa fa-signal' aria-hidden={true}></i>
+                <p className='text-center display-4'>{this.props.time}</p>
+                <i className='fa fa-battery size' aria-hidden={true}></i>
             </div>
         )
     }

@@ -1,16 +1,16 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import English from '../public/assets/i18n/translations/en.json'
-import Vietnam from '../public/assets/i18n/translations/viet.json'
+import Vietnamese from '../public/assets/i18n/translations/viet.json'
 
 // the translations
 // (tip move them in a JSON file and import them)
 const resources = {
   en: {
-    translation: English
+    translation:English
   },
   vn:{
-    translation:Vietnam
+    translation:Vietnamese
   }
 };
 

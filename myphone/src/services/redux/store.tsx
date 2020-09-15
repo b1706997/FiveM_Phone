@@ -9,7 +9,6 @@ const rootReducer = combineReducers({
 } as any)
 
 
-const serializableCheck = createSerializableStateInvariantMiddleware()
 const store =  configureStore ({
     reducer:rootReducer,
     middleware: []

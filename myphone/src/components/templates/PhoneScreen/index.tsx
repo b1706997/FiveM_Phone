@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom'
 import './index.css'
 
 import Header from './Header'
+import Footer from './Footer'
 type State = {
     detail:boolean,
 }
@@ -22,11 +23,13 @@ class PhoneScreen extends React.Component<Prop,State> {
         if(this.props.display!=nextProp.display)
             return true
     }
+    styleClass : string = "container-fluid mw-100"
     render() {
         return(
-            <div className={this.props.display ? 'container' : 'container-disable'}>
+            <div className={this.props.display ? this.styleClass : 'container-disable'}>
                 <Header />
                 {/* <Screen/> */}
+                <Footer/>
             </div>
         )
     }
